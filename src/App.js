@@ -9,7 +9,9 @@ import MessagesContext from './contexts/MessagesContext';
 import AccountContext from './contexts/AccountContext';
 
 // EXERCISE 4.1
-const hostURL = "https://localhost:3002";
+const hostURL = process.env.NODE_ENV === "production"
+  ? "https://lesson-10-elijah-tran-api.onrender.com"
+  : "https://localhost:3002";
 
 const apiSignup = hostURL+ "/signup";
 const apiLogin = hostURL+ "/login";
